@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a6ef5;
+  --primary-dark: #0d4fc2;
+  --navy: #0f1e3c;
+  --card-bg: #eef2fb;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-bold px-8 py-3.5 rounded-xl
+           hover:bg-primary-dark transition-all duration-200
+           shadow-[0_4px_20px_rgba(26,110,245,0.3)]
+           hover:shadow-[0_8px_28px_rgba(26,110,245,0.45)]
+           hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-bold px-8 py-3.5 rounded-xl
+           hover:bg-primary hover:text-white transition-all duration-200;
+  }
+
+  .section-label {
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-primary mb-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold text-navy leading-tight;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5
+           hover:shadow-[0_12px_40px_rgba(26,110,245,0.12)];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1a6ef5; border-radius: 3px; }
+
+/* Gradient mesh background */
+.mesh-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(26,110,245,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(26,110,245,0.04) 0%, transparent 50%),
+              #ffffff;
+}
+
+/* Animate on scroll utility */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
